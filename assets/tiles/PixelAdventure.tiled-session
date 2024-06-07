@@ -17,14 +17,14 @@
             "scale": 1,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 354,
+                "x": 320,
                 "y": 183.5
             }
         },
         "Level02.tmx": {
             "expandedObjectLayers": [
-                3,
-                2
+                2,
+                3
             ],
             "scale": 1,
             "selectedLayer": 1,
@@ -35,8 +35,8 @@
         },
         "Level03.tmx": {
             "expandedObjectLayers": [
-                3,
-                2
+                2,
+                3
             ],
             "scale": 1.5,
             "selectedLayer": 1,
@@ -55,14 +55,14 @@
         },
         "Level05.tmx": {
             "expandedObjectLayers": [
-                3,
-                2
+                2,
+                3
             ],
             "scale": 1,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 363,
-                "y": 227.5
+                "x": 361,
+                "y": 142.5
             }
         },
         "NivelPrueba.tmx": {

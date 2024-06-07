@@ -324,7 +324,7 @@ class Player1 extends SpriteAnimationGroupComponent
 
 
   void collidedWithEnemy() {
-   _respawn();
+    _respawn();
   }
 
 
@@ -333,6 +333,3 @@ class Player1 extends SpriteAnimationGroupComponent
     _respawn();
   }
 }
-
-
-

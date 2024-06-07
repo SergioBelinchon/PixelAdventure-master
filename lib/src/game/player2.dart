@@ -1,3 +1,4 @@
+
 import 'dart:async';
 import 'dart:core';
 import 'package:flame/collisions.dart';
@@ -327,4 +328,3 @@ class Player2 extends SpriteAnimationGroupComponent
     _respawn();
   }
 }
-

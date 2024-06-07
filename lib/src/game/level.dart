@@ -27,15 +27,15 @@ class Level extends World with HasGameRef<PixelAdventure>
   @override
   FutureOr<void> onLoad() async
   {
-  level = await TiledComponent.load('$levelName.tmx', Vector2.all(16));
+    level = await TiledComponent.load('$levelName.tmx', Vector2.all(16));
 
-  add(level);
+    add(level);
 
-  _scrollingFondo();
-  _spawnObjetos();
-  _addColisiones();
+    _scrollingFondo();
+    _spawnObjetos();
+    _addColisiones();
 
- return super.onLoad();
+    return super.onLoad();
   }
 
   void _scrollingFondo()
@@ -43,16 +43,16 @@ class Level extends World with HasGameRef<PixelAdventure>
     final capaFondo = level.tileMap.getLayer('Fondo');
 
     if(capaFondo != null)
-      {
-        final colorFondo =
-        capaFondo.properties.getValue('ColorFondo');
-        final fondoTile = FondoTile(
-          color : colorFondo ?? 'Gray',
-          position: Vector2(0, 0),
-               );
-               add(fondoTile);
-             }
-          }
+    {
+      final colorFondo =
+      capaFondo.properties.getValue('ColorFondo');
+      final fondoTile = FondoTile(
+        color : colorFondo ?? 'Gray',
+        position: Vector2(0, 0),
+      );
+      add(fondoTile);
+    }
+  }
 
   void _spawnObjetos()
   {
@@ -82,23 +82,23 @@ class Level extends World with HasGameRef<PixelAdventure>
             );
             add(fruit);
             break;
-           case 'Sierra' :
+          case 'Sierra' :
             final esVertical = zonaSpawn.properties.getValue('esVertical');
             final offNeg = zonaSpawn.properties.getValue('offNeg');
             final offPos = zonaSpawn.properties.getValue('offPos');
             final sierra = Sierra(
-              esVertical: esVertical,
-              offNeg: offNeg,
-              offPos: offPos,
-              position: Vector2(zonaSpawn.x, zonaSpawn.y),
-              size: Vector2(zonaSpawn.width, zonaSpawn.height)
+                esVertical: esVertical,
+                offNeg: offNeg,
+                offPos: offPos,
+                position: Vector2(zonaSpawn.x, zonaSpawn.y),
+                size: Vector2(zonaSpawn.width, zonaSpawn.height)
             );
-          add(sierra);
+            add(sierra);
             break;
           case 'Checkpoint' :
             final checkpoint = Checkpoint(
-              position: Vector2(zonaSpawn.x, zonaSpawn.y),
-              size: Vector2(zonaSpawn.width, zonaSpawn.height)
+                position: Vector2(zonaSpawn.x, zonaSpawn.y),
+                size: Vector2(zonaSpawn.width, zonaSpawn.height)
             );
             add(checkpoint);
             break;
@@ -106,8 +106,8 @@ class Level extends World with HasGameRef<PixelAdventure>
             final offNeg = zonaSpawn.properties.getValue('offNeg');
             final offPos = zonaSpawn.properties.getValue('offPos');
             final chicken = Chicken(
-                position: Vector2(zonaSpawn.x, zonaSpawn.y),
-                size: Vector2(zonaSpawn.width, zonaSpawn.height),
+              position: Vector2(zonaSpawn.x, zonaSpawn.y),
+              size: Vector2(zonaSpawn.width, zonaSpawn.height),
               offNeg: offNeg,
               offPos: offPos,
             );
@@ -153,4 +153,3 @@ class Level extends World with HasGameRef<PixelAdventure>
 
   }
 }
-

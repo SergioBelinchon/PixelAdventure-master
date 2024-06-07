@@ -41,6 +41,8 @@ dependencies:
   flame_audio: ^2.1.5
   firebase_core: ^2.24.2
   firebase_auth: ^4.16.0
+  google_fonts: ^6.1.0
+
 
 
 dev_dependencies:
@@ -82,7 +84,9 @@ flutter:
     - assets/images/Main Characters/Pink Man/
     - assets/images/Main Characters/Virtual Guy/
     - assets/images/Enemies/Chicken/
+    - assets/images/Enemies/Mushroom/
     - assets/images/Heart/
+    - assets/images/Menu/Background/
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
