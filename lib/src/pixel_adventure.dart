@@ -181,7 +181,7 @@ class PixelAdventure extends FlameGame
   Player1 player1 = Player1(character: 'Pink Man');
   Player2 player2 = Player2(character: 'Mask Dude');
   late JoystickComponent joystick;
-  bool showControls = false;
+  bool showControls = true;
   bool playSounds = true;
   double soundVolume = 1.0;
   List<String> levelNames = ['Level05'];

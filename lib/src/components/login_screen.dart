@@ -19,10 +19,19 @@ class _LoginScreenState extends State<LoginScreen> {
         email: _emailController.text,
         password: _passwordController.text,
       );
-      Navigator.of(context).pushReplacementNamed('/main');
+
+      // Mostrar mensaje de confirmación de login exitoso
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('Login exitoso'),
+      ));
+
+      // Redirigir a la siguiente pantalla después de un breve retraso para que el mensaje sea visible
+      Future.delayed(Duration(seconds: 1), () {
+        Navigator.of(context).pushReplacementNamed('/main');
+      });
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text('Error en el login: $e'),
+        content: Text('Error en el login'),
       ));
     }
   }
@@ -40,31 +49,55 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Text(
+                'Pixel Adventure',
+                style: GoogleFonts.getFont(
+                  'Kdam Thmor Pro',
+                  textStyle: const TextStyle(
+                    fontSize: 50,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              SizedBox(height: 40),
               TextField(
                 controller: _emailController,
                 decoration: InputDecoration(
-                    labelText: 'Email',
-                    labelStyle: GoogleFonts.getFont('Kdam Thmor Pro'),
+                  labelText: 'Email',
+                  labelStyle: GoogleFonts.getFont('Kdam Thmor Pro',
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
                 ),
               ),
               TextField(
                 controller: _passwordController,
                 decoration: InputDecoration(
-                    labelText: 'Contraseña',
-                    labelStyle: GoogleFonts.getFont('Kdam Thmor Pro'),
+                  labelText: 'Contraseña',
+                  labelStyle: GoogleFonts.getFont('Kdam Thmor Pro',
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
                 ),
                 obscureText: true,
               ),
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: _login,
-                child: Text('Login',
-                  style: GoogleFonts.getFont('Kdam Thmor Pro')),
+                child: Text(
+                  'Login',
+                  style: GoogleFonts.getFont('Kdam Thmor Pro',
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
                 ),
+              ),
               ElevatedButton(
                 onPressed: _navigateToRegister,
-                child: Text('Registrarse',
-                    style: GoogleFonts.getFont('Kdam Thmor Pro')),
+                child: Text(
+                  'Registrarse',
+                  style: GoogleFonts.getFont('Kdam Thmor Pro',
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                ),
               ),
             ],
           ),

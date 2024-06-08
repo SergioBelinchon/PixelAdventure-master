@@ -48,40 +48,62 @@ class _RegisterScreenState extends State<RegisterScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Text(
+                'Pixel Adventure',
+                style: GoogleFonts.getFont(
+                  'Kdam Thmor Pro',
+                  textStyle: const TextStyle(
+                    fontSize: 50,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              SizedBox(height: 40),
               TextField(
                 controller: _emailController,
                 decoration: InputDecoration(
-                    labelText: 'Email',
-                    labelStyle: GoogleFonts.getFont('Kdam Thmor Pro'),
+                  labelText: 'Email',
+                  labelStyle: GoogleFonts.getFont('Kdam Thmor Pro'),
                 ),
               ),
               TextField(
                 controller: _passwordController,
                 decoration: InputDecoration(
-                    labelText: 'Contraseña',
-                    labelStyle: GoogleFonts.getFont('Kdam Thmor Pro'),
+                  labelText: 'Contraseña',
+                  labelStyle: GoogleFonts.getFont('Kdam Thmor Pro'),
                 ),
                 obscureText: true,
               ),
               TextField(
                 controller: _confirmPasswordController,
                 decoration: InputDecoration(
-                    labelText: 'Confirmar contraseña',
-                    labelStyle: GoogleFonts.getFont('Kdam Thmor Pro'),
+                  labelText: 'Confirmar contraseña',
+                  labelStyle: GoogleFonts.getFont('Kdam Thmor Pro'),
                 ),
                 obscureText: true,
               ),
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: _register,
-                child: Text('Registrar',
-                      style: GoogleFonts.getFont('Kdam Thmor Pro'),
+                child: Text(
+                  'Registrar',
+                  style: GoogleFonts.getFont(
+                    'Kdam Thmor Pro',
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
               ),
               ElevatedButton(
                 onPressed: _cancel,
-                child: Text('Cancelar',
-                      style: GoogleFonts.getFont('Kdam Thmor Pro'),
+                child: Text(
+                  'Cancelar',
+                  style: GoogleFonts.getFont(
+                    'Kdam Thmor Pro',
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ],
