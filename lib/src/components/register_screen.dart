@@ -55,7 +55,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   textStyle: const TextStyle(
                     fontSize: 50,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: Colors.grey,
                   ),
                 ),
               ),
@@ -91,7 +91,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   style: GoogleFonts.getFont(
                     'Kdam Thmor Pro',
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: Colors.grey,
                   ),
                 ),
               ),
@@ -102,7 +102,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   style: GoogleFonts.getFont(
                     'Kdam Thmor Pro',
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: Colors.grey,
                   ),
                 ),
               ),
