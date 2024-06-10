@@ -19,8 +19,8 @@ class Level extends World with HasGameRef<PixelAdventure>
 
   final String levelName;
   final Player1 player1;
-  final Player2 player2;
-  Level({required this.levelName, required this.player1, required this.player2});
+  //final Player2 player2;
+  Level({required this.levelName, required this.player1 /*required this.player2*/});
   late TiledComponent level;
   List<ColisionBloque> colisionBloques = [];
 
@@ -69,11 +69,11 @@ class Level extends World with HasGameRef<PixelAdventure>
             player1.scale.x = 1;
             add(player1);
             break;
-          case 'Player2' :
+          /*case 'Player2' :
             player2.position = Vector2(zonaSpawn.x, zonaSpawn.y);
             player2.scale.x = 1;
             add(player2);
-            break;
+            break;*/
           case 'Fruit' :
             final fruit = Fruit(
               fruit: zonaSpawn.name,
@@ -149,7 +149,7 @@ class Level extends World with HasGameRef<PixelAdventure>
       }
     }
     player1.colisionBloques = colisionBloques;
-    player2.colisionBloques = colisionBloques;
+    //player2.colisionBloques = colisionBloques;
 
   }
 }
