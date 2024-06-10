@@ -4,8 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 class MenuScreen extends StatelessWidget {
   final VoidCallback onPlay;
+  final VoidCallback onOptions;
 
-  MenuScreen({required this.onPlay});
+  MenuScreen({required this.onPlay, required this.onOptions});
 
   @override
   Widget build(BuildContext context) {
@@ -18,12 +19,12 @@ class MenuScreen extends StatelessWidget {
             textStyle: const TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
-              color: Colors.white,
+              color: Colors.grey,
             ),
           ),
         ),
       ),
-      body: BackgroundWidget( // Aquí envuelve el contenido con tu widget de fondo
+      body: BackgroundWidget(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -35,7 +36,7 @@ class MenuScreen extends StatelessWidget {
                   textStyle: const TextStyle(
                     fontSize: 50,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: Colors.grey,
                   ),
                 ),
               ),
@@ -49,18 +50,14 @@ class MenuScreen extends StatelessWidget {
                     textStyle: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Colors.grey,
                     ),
                   ),
                 ),
               ),
               SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Opciones no implementadas')),
-                  );
-                },
+                onPressed: onOptions,
                 child: Text(
                   'Opciones',
                   style: GoogleFonts.getFont(
@@ -68,7 +65,7 @@ class MenuScreen extends StatelessWidget {
                     textStyle: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Colors.grey,
                     ),
                   ),
                 ),
