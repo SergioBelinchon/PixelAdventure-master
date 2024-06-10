@@ -31,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
       });
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text('Error en el login'),
+        content: Text('Usuario no encontrado'),
       ));
     }
   }
@@ -56,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   textStyle: const TextStyle(
                     fontSize: 50,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: Colors.grey,
                   ),
                 ),
               ),
@@ -67,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   labelText: 'Email',
                   labelStyle: GoogleFonts.getFont('Kdam Thmor Pro',
                       fontWeight: FontWeight.bold,
-                      color: Colors.white),
+                      color: Colors.grey),
                 ),
               ),
               TextField(
@@ -76,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   labelText: 'Contraseña',
                   labelStyle: GoogleFonts.getFont('Kdam Thmor Pro',
                       fontWeight: FontWeight.bold,
-                      color: Colors.white),
+                      color: Colors.grey),
                 ),
                 obscureText: true,
               ),
@@ -87,7 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   'Login',
                   style: GoogleFonts.getFont('Kdam Thmor Pro',
                       fontWeight: FontWeight.bold,
-                      color: Colors.white),
+                      color: Colors.grey),
                 ),
               ),
               ElevatedButton(
@@ -96,7 +96,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   'Registrarse',
                   style: GoogleFonts.getFont('Kdam Thmor Pro',
                       fontWeight: FontWeight.bold,
-                      color: Colors.white),
+                      color: Colors.grey),
                 ),
               ),
             ],
