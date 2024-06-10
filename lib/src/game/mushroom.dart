@@ -37,7 +37,7 @@ class Mushroom extends SpriteAnimationGroupComponent
 
 
   late final Player1 player1;
-  late final Player2 player2;
+  //late final Player2 player2;
   late final SpriteAnimation _idleAnimation;
   late final SpriteAnimation _hitAnimation;
   late final SpriteAnimation _runAnimation;
@@ -47,7 +47,7 @@ class Mushroom extends SpriteAnimationGroupComponent
   {
     //debugMode = true;
     player1 = game.player1;
-    player2 = game.player2;
+    //player2 = game.player2;
 
     add(
       RectangleHitbox(
@@ -110,7 +110,7 @@ class Mushroom extends SpriteAnimationGroupComponent
     velocity.x = 0;
 
     double player1Offset = (player1.scale.x > 0) ? 0 : -player1.width;
-    double player2Offset = (player2.scale.x > 0) ? 0 : -player2.width;
+   // double player2Offset = (player2.scale.x > 0) ? 0 : -player2.width;
     double mushroomOffset = (scale.x > 0) ? 0 : -width;
 
     if(player1InRange())
@@ -119,7 +119,7 @@ class Mushroom extends SpriteAnimationGroupComponent
       (player1.x + player1Offset < position.x + mushroomOffset) ? -1 : 1;
       velocity.x = targetDirection * runSpeed;
     }
-
+/*
     if(player2InRange())
     {
       targetDirection =
@@ -127,10 +127,14 @@ class Mushroom extends SpriteAnimationGroupComponent
       velocity.x = targetDirection * runSpeed;
     }
 
+ */
+
     moveDirection = lerpDouble(moveDirection, targetDirection, 0.1) ?? 1;
 
     position.x += velocity.x * dt;
   }
+
+
 
   bool player1InRange()
   {
@@ -141,7 +145,7 @@ class Mushroom extends SpriteAnimationGroupComponent
         player1.y + player1.height > position.y &&
         player1.y < position.y + height;
   }
-
+/*
   bool player2InRange()
   {
     double player2Offset = (player2.scale.x > 0) ? 0 : - player2.width;
@@ -151,7 +155,7 @@ class Mushroom extends SpriteAnimationGroupComponent
         player2.y + player2.height > position.y &&
         player2.y < position.y + height;
   }
-
+*/
   void _updateState()
   {
     current = (velocity.x != 0) ? State.run : State.idle;
@@ -183,7 +187,7 @@ class Mushroom extends SpriteAnimationGroupComponent
 
     }
   }
-
+/*
   void collidedWithPlayer2() async
   {
     if(player2.velocity.y > 0 && player2.y + player2.height > position.y)
@@ -203,5 +207,7 @@ class Mushroom extends SpriteAnimationGroupComponent
       player2.collidedWithEnemy();
     }
   }
+
+ */
 
 }
