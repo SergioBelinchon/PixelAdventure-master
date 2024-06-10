@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:core';
-
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame/effects.dart';
@@ -9,7 +8,6 @@ import 'package:flutter/services.dart';
 import 'package:pixeladventure/src/game/player2.dart';
 import 'package:pixeladventure/src/game/sierra.dart';
 import 'package:pixeladventure/src/pixel_adventure.dart';
-
 import '../colisiones/custom_hitbox.dart';
 import '../colisiones/utils.dart';
 import 'checkpoint.dart';
@@ -63,6 +61,9 @@ class Player1 extends SpriteAnimationGroupComponent
   double fixedDeltaTime = 1 / 60;
   double accumulatedTime = 0;
 
+  Vector2 keyboardInput = Vector2.zero();
+  Vector2 combinedInput = Vector2.zero();
+
   @override
   FutureOr<void> onLoad() {
     _loadAllAnimations();
@@ -97,19 +98,22 @@ class Player1 extends SpriteAnimationGroupComponent
 
   @override
   bool onKeyEvent(KeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
-    horizontalMovement = 0;
+    keyboardInput.x = 0;
     final isLeftKeyPressed = keysPressed.contains(LogicalKeyboardKey.arrowLeft);
-    final isRightKeyPressed = keysPressed.contains(
-        LogicalKeyboardKey.arrowRight);
+    final isRightKeyPressed = keysPressed.contains(LogicalKeyboardKey.arrowRight);
 
-    horizontalMovement += isLeftKeyPressed ? -1 : 0;
-    horizontalMovement += isRightKeyPressed ? 1 : 0;
+    keyboardInput.x += isLeftKeyPressed ? -1 : 0;
+    keyboardInput.x += isRightKeyPressed ? 1 : 0;
 
     haSaltado = keysPressed.contains(LogicalKeyboardKey.space);
 
-    return super.onKeyEvent(event as KeyEvent, keysPressed);
+    return super.onKeyEvent(event, keysPressed);
   }
 
+  void updateInput(Vector2 joystickInput) {
+    combinedInput = keyboardInput + joystickInput;
+    combinedInput.x = combinedInput.x.clamp(-1, 1);
+  }
 
   @override
   void onCollisionStart(Set<Vector2> intersectionPoints,
@@ -201,7 +205,7 @@ class Player1 extends SpriteAnimationGroupComponent
 
     //if(velocity.y > _gravedad) isEnSuelo = false; //Opcional
 
-    velocity.x = horizontalMovement * moveSpeed;
+    velocity.x = combinedInput.x * moveSpeed;
     position.x += velocity.x * dt;
   }
 
