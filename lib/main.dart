@@ -36,3 +36,10 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+class GameScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return GameWidget(game: PixelAdventure());
+  }
+}
