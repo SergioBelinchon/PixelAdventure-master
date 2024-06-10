@@ -1,10 +1,6 @@
-/*
-import 'package:flame/flame.dart';
-import 'package:flame/game.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:pixeladventure/src/pixel_adventure.dart';
 import 'package:firebase_core/firebase_core.dart';
+<<<<<<< HEAD
+=======
 import 'firebase_options.dart';
 
 void main() async
@@ -166,9 +162,12 @@ class GameScreen extends StatelessWidget {
 }
 */
 import 'package:firebase_core/firebase_core.dart';
+>>>>>>> origin/master
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
+import 'package:pixeladventure/src/components/loading_screen.dart';
 import 'package:pixeladventure/src/components/login_screen.dart';
+import 'package:pixeladventure/src/components/main_screen.dart';
 import 'package:pixeladventure/src/components/menu_screen.dart';
 import 'package:pixeladventure/src/components/onboarding_screen.dart';
 import 'package:pixeladventure/src/components/register_screen.dart';
@@ -199,41 +198,5 @@ class MyApp extends StatelessWidget {
         '/game': (context) => GameScreen(),
       },
     );
-  }
-}
-
-class MainScreen extends StatefulWidget {
-  @override
-  _MainScreenState createState() => _MainScreenState();
-}
-
-class _MainScreenState extends State<MainScreen> {
-  bool _showGame = false;
-  late PixelAdventure _game;
-
-  @override
-  void initState() {
-    super.initState();
-    _game = PixelAdventure();
-  }
-
-  void _startGame() {
-    setState(() {
-      _showGame = true;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return _showGame
-        ? GameWidget(game: _game)
-        : MenuScreen(onPlay: _startGame);
-  }
-}
-
-class GameScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return GameWidget(game: PixelAdventure());
   }
 }
