@@ -1,4 +1,3 @@
-
 import 'dart:async';
 import 'dart:core';
 import 'package:flame/collisions.dart';
@@ -114,7 +113,7 @@ class Player2 extends SpriteAnimationGroupComponent
     if (!reachedCheckpoint) {
       if (other is Fruit) other.collidedWithPlayer();
       if (other is Sierra) _respawn();
-      if (other is Chicken) other.collidedWithPlayer2();
+      //if (other is Chicken) other.collidedWithPlayer2();
       if (other is Checkpoint) _reachedCheckpoint();
       if (other is Player1) other.collidedWithPlayer2();
     }
