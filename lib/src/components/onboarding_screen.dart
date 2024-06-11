@@ -19,7 +19,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Bienvenidx a Pixel Adventure",
+                "Pixel Adventure",
                 style: GoogleFonts.getFont(
                   'Kdam Thmor Pro',
                   textStyle: TextStyle(
